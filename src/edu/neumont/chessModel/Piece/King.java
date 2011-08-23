@@ -1,14 +1,14 @@
-package edu.neumont.chessModel.Piece;
+package edu.neumont.chessModel.piece;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 
-import edu.neumont.chessModel.Board.Location;
-import edu.neumont.chessModel.Board.Team;
-import edu.neumont.chessModel.Interface.ChessBoardInterface;
-import edu.neumont.chessModel.Movement.Adjustment;
-import edu.neumont.chessModel.Movement.MoveEnumeration;
+import edu.neumont.chessModel.board.ChessBoard;
+import edu.neumont.chessModel.board.Location;
+import edu.neumont.chessModel.game.Team;
+import edu.neumont.chessModel.movement.Adjustment;
+import edu.neumont.chessModel.movement.MoveEnumeration;
 
 public class King extends ChessPiece {
 
@@ -46,14 +46,14 @@ public class King extends ChessPiece {
 		return NAME;
 	}
 		
-	public Enumeration<Location> getLegalMoves(ChessBoardInterface board) {
+	public Enumeration<Location> getLegalMoves(ChessBoard board) {
 		return new KingMoves(board, this);
 	}
 	
 	public class KingMoves implements Enumeration<Location>{
 		 private Iterator<Location> iter;
 		 
-		 public KingMoves(ChessBoardInterface board, King king){
+		 public KingMoves(ChessBoard board, King king){
 			  ArrayList<Location> kingMoves = new ArrayList<Location>();
 			  MoveEnumeration moves = new MoveEnumeration(board, king.getLocation(board));
 			  moves.addAdjustments(kingAdjustments);
@@ -92,7 +92,7 @@ public class King extends ChessPiece {
 	}
 	
 	//this is castling left for black and right for white
-	public Location castleingLeftBlack_RightWhite(ChessPiece rook, ChessBoardInterface board)
+	public Location castleingLeftBlack_RightWhite(ChessPiece rook, ChessBoard board)
 	{
 		Location castleLocation = null;
 		
@@ -105,7 +105,7 @@ public class King extends ChessPiece {
 	}
 	
 	//this is castling left for black and right for white
-	public Location castleingLeftWhite_RightBlack(ChessPiece rook, ChessBoardInterface board)
+	public Location castleingLeftWhite_RightBlack(ChessPiece rook, ChessBoard board)
 	{
 		Location castleLocation = null;
 		

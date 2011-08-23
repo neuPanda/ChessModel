@@ -1,23 +1,22 @@
-package edu.neumont.chessModel.Movement;
+package edu.neumont.chessModel.movement;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 
-import edu.neumont.chessModel.Board.ChessBoard;
-import edu.neumont.chessModel.Board.Location;
-import edu.neumont.chessModel.Interface.ChessBoardInterface;
-import edu.neumont.chessModel.Piece.ChessPiece;
+import edu.neumont.chessModel.board.ChessBoard;
+import edu.neumont.chessModel.board.Location;
+import edu.neumont.chessModel.piece.ChessPiece;
 
 public class MoveEnumeration implements Enumeration<Location> {
 
-	private ChessBoardInterface board;
+	private ChessBoard board;
 	private Location from;
 	private boolean pieceIsWhite;
 	private ArrayList<Location> locations = new ArrayList<Location>();
 	private Iterator<Location> iter = null;
 	
-	public MoveEnumeration(ChessBoardInterface board, Location from) {
+	public MoveEnumeration(ChessBoard board, Location from) {
 		this.board = board;
 		this.from = from;
 		ChessPiece piece = board.getPiece(from);

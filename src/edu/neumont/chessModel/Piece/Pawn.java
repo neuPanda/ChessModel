@@ -1,13 +1,12 @@
-package edu.neumont.chessModel.Piece;
+package edu.neumont.chessModel.piece;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 
-import edu.neumont.chessModel.Board.ChessBoard;
-import edu.neumont.chessModel.Board.Location;
-import edu.neumont.chessModel.Board.Team;
-import edu.neumont.chessModel.Interface.ChessBoardInterface;
+import edu.neumont.chessModel.board.ChessBoard;
+import edu.neumont.chessModel.board.Location;
+import edu.neumont.chessModel.game.Team;
 
 public class Pawn extends ChessPiece {
 
@@ -22,17 +21,17 @@ public class Pawn extends ChessPiece {
 		return NAME;
 	}
 	
-	public Location nextStep(ChessBoardInterface board) {
+	public Location nextStep(ChessBoard board) {
 		int step = team.isWhite()? 1: -1;
 		return new Location(this.getLocation(board).getRow()+step, this.getLocation(board).getColumn());
 	}
 
-	public Location longStep(ChessBoardInterface board) {
+	public Location longStep(ChessBoard board) {
 		int step = team.isWhite()? 2: -2;
 		return new Location(this.getLocation(board).getRow()+step, this.getLocation(board).getColumn());
 	}
 
-	public Location strikeLeft(ChessBoardInterface board) {
+	public Location strikeLeft(ChessBoard board) {
 		int step;
 		int left;
 		if (team.isWhite()) {
@@ -45,7 +44,7 @@ public class Pawn extends ChessPiece {
 		return new Location(this.getLocation(board).getRow()+step, this.getLocation(board).getColumn()+left);
 	}
 
-	public Location strikeRight(ChessBoardInterface board) {
+	public Location strikeRight(ChessBoard board) {
 		int step;
 		int right;
 		if (team.isWhite()) {
@@ -58,7 +57,7 @@ public class Pawn extends ChessPiece {
 		return new Location(this.getLocation(board).getRow()+step, this.getLocation(board).getColumn()+right);
 	}
 
-	public Enumeration<Location> getLegalMoves(ChessBoardInterface board) {
+	public Enumeration<Location> getLegalMoves(ChessBoard board) {
 		return new PawnMoves(board, this);
 	}
 	
@@ -66,7 +65,7 @@ public class Pawn extends ChessPiece {
 
 		private Iterator<Location> iter;
 		
-		public PawnMoves(ChessBoardInterface board, Pawn pawn) {
+		public PawnMoves(ChessBoard board, Pawn pawn) {
 			
 			ArrayList<Location> moves = new ArrayList<Location>();
 			boolean pawnIsWhite = pawn.getTeam().isWhite();

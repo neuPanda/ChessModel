@@ -1,11 +1,11 @@
-package edu.neumont.chessModel.Piece;
+package edu.neumont.chessModel.piece;
 
 import java.util.Enumeration;
 
-import edu.neumont.chessModel.Board.Location;
-import edu.neumont.chessModel.Board.Team;
-import edu.neumont.chessModel.Interface.ChessBoardInterface;
-import edu.neumont.chessModel.Movement.Move;
+import edu.neumont.chessModel.board.ChessBoard;
+import edu.neumont.chessModel.board.Location;
+import edu.neumont.chessModel.game.Team;
+import edu.neumont.chessModel.movement.Move;
 
 public abstract class ChessPiece {
 
@@ -17,7 +17,7 @@ public abstract class ChessPiece {
 		this.team = team;
 		this.worth = worth;
 	}	
-	public Location getLocation(ChessBoardInterface board) {
+	public Location getLocation(ChessBoard board) {
 		return board.getPieceLocation(this);
 	}
 	
@@ -37,9 +37,9 @@ public abstract class ChessPiece {
 		return team;
 	}
 	
-	public abstract Enumeration<Location> getLegalMoves(ChessBoardInterface board);
+	public abstract Enumeration<Location> getLegalMoves(ChessBoard board);
 	
-	public boolean canAttack(ChessBoardInterface board, Location target) {
+	public boolean canAttack(ChessBoard board, Location target) {
 		boolean attacks = false;
 		for (Enumeration<Location> e = getLegalMoves(board); !attacks && e.hasMoreElements(); ) {
 			Location location = e.nextElement();
@@ -48,7 +48,7 @@ public abstract class ChessPiece {
 		return attacks;
 	}
 	
-	public boolean isLegalMove(ChessBoardInterface board, Move move) {
+	public boolean isLegalMove(ChessBoard board, Move move) {
 		boolean isValid = false;
 		
 		for (Enumeration<Location> e = getLegalMoves(board); !isValid && e.hasMoreElements(); ) {

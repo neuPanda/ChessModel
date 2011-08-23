@@ -1,17 +1,15 @@
-package edu.neumont.chessModel.Game;
+package edu.neumont.chessModel.game;
 
-import edu.neumont.chessModel.Board.ChessBoard;
-import edu.neumont.chessModel.Board.Location;
-import edu.neumont.chessModel.Board.Team;
-import edu.neumont.chessModel.Board.Team.Color;
-import edu.neumont.chessModel.Interface.ChessBoardInterface;
-import edu.neumont.chessModel.Interface.ICheckChecker;
-import edu.neumont.chessModel.Movement.Move;
-import edu.neumont.chessModel.Piece.*;
+import edu.neumont.chessModel.board.ChessBoard;
+import edu.neumont.chessModel.board.Location;
+import edu.neumont.chessModel.game.Team.Color;
+import edu.neumont.chessModel.movement.Move;
+import edu.neumont.chessModel.piece.ChessPiece;
+import edu.neumont.chessModel.piece.King;
 
 public class ChessGame implements ICheckChecker
 {
-	ChessBoardInterface board;
+	ChessBoard board;
 	Team lightTeam;
 	Team darkTeam;
 	Team currentTeam;

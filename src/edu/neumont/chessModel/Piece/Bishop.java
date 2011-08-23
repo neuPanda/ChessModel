@@ -1,11 +1,11 @@
-package edu.neumont.chessModel.Piece;
+package edu.neumont.chessModel.piece;
 
 import java.util.Enumeration;
 
-import edu.neumont.chessModel.Board.Location;
-import edu.neumont.chessModel.Board.Team;
-import edu.neumont.chessModel.Interface.ChessBoardInterface;
-import edu.neumont.chessModel.Movement.MoveEnumeration;
+import edu.neumont.chessModel.board.ChessBoard;
+import edu.neumont.chessModel.board.Location;
+import edu.neumont.chessModel.game.Team;
+import edu.neumont.chessModel.movement.MoveEnumeration;
 
 public class Bishop extends ChessPiece {
 
@@ -21,7 +21,7 @@ public class Bishop extends ChessPiece {
 		return NAME;
 	}
 	
-	public Enumeration<Location> getLegalMoves(ChessBoardInterface board) {
+	public Enumeration<Location> getLegalMoves(ChessBoard board) {
 		MoveEnumeration moves = new MoveEnumeration(board, this.getLocation(board));
 		moves.addDiags();
 		return moves;

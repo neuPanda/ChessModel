@@ -1,14 +1,14 @@
-package edu.neumont.chessModel.Board;
+package edu.neumont.chessModel.board;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
 
-import edu.neumont.chessModel.Interface.ChessBoardInterface;
-import edu.neumont.chessModel.Movement.Move;
-import edu.neumont.chessModel.Piece.ChessPiece;
+import edu.neumont.chessModel.game.Team;
+import edu.neumont.chessModel.movement.Move;
+import edu.neumont.chessModel.piece.ChessPiece;
 
-public class ChessBoard implements ChessBoardInterface{
+public class ChessBoard{
 
 	public static final int N_ROWS = 8;
 	public static final int N_COLS = 8;

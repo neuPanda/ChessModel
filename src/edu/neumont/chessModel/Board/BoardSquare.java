@@ -1,6 +1,6 @@
-package edu.neumont.chessModel.Board;
+package edu.neumont.chessModel.board;
 
-import edu.neumont.chessModel.Piece.ChessPiece;
+import edu.neumont.chessModel.piece.ChessPiece;
 
 
 public class BoardSquare {

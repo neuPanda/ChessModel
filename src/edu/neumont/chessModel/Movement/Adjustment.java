@@ -1,6 +1,6 @@
-package edu.neumont.chessModel.Movement;
+package edu.neumont.chessModel.movement;
 
-import edu.neumont.chessModel.Board.Location;
+import edu.neumont.chessModel.board.Location;
 
 public class Adjustment {
 	private int row;
