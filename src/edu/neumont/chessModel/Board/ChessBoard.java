@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
 
+import edu.neumont.chessModel.game.IGameListener;
 import edu.neumont.chessModel.game.Team;
 import edu.neumont.chessModel.movement.Move;
 import edu.neumont.chessModel.piece.ChessPiece;
@@ -43,10 +44,6 @@ public class ChessBoard{
 		}
 	}
 	
-	public interface IListener {
-		public void movePiece(Move move, boolean capturePiece);
-		public void placePiece(ChessPiece piece, Location location);
-	}
 	
 	public static boolean isInBounds(Location location) {
 		return (location.getRow() >= 0) && (location.getRow() < N_ROWS) && (location.getColumn() >= 0) && (location.getColumn() < N_COLS);
@@ -55,7 +52,7 @@ public class ChessBoard{
 	//private
 	private BoardSquare grid[][] = new BoardSquare[N_ROWS][N_COLS];
 	private Stack<MoveDescription> tryingMoves = new Stack<MoveDescription>();
-	private ArrayList<IListener> listeners = new ArrayList<IListener>();
+	private ArrayList<IGameListener> listeners = new ArrayList<IGameListener>();
 	private boolean hasEnPassantMove = false; // TODO EnPassant
 	private Location enPassantPawnLocation; // saved location of pawn that can be captured EnPassant
 											// TODO EnPassant
@@ -92,24 +89,24 @@ public class ChessBoard{
 		return enPassantPawnLocation.equals(location);
 	}
 
-	public void AddListener(IListener listener) {
+	public void addListener(IGameListener listener) {
 		listeners.add(listener);
 	}
 	
-	public void RemoveListener(IListener listener) {
+	public void removeListener(IGameListener listener) {
 		listeners.remove(listener);
 	}
 	
 	private void notifyListenersOfMove(Move move, boolean capturePiece) {
-		for (Iterator<IListener> i = listeners.iterator(); i.hasNext(); ) {
-			IListener listener = i.next();
+		for (Iterator<IGameListener> i = listeners.iterator(); i.hasNext(); ) {
+			IGameListener listener = i.next();
 			listener.movePiece(move, capturePiece);
 		}
 	}
 	
 	private void notifyListenersOfPlacement(ChessPiece piece, Location location) {
-		for (Iterator<IListener> i = listeners.iterator(); i.hasNext(); ) {
-			IListener listener = i.next();
+		for (Iterator<IGameListener> i = listeners.iterator(); i.hasNext(); ) {
+			IGameListener listener = i.next();
 			listener.placePiece(piece, location);
 		}
 	}
@@ -223,5 +220,5 @@ public class ChessBoard{
 		}
 		return null;
 	}
-	
+
 }
