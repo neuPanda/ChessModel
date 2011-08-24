@@ -1,4 +1,4 @@
-package edu.neumont.chessModel.board;
+package edu.neumont.chessModel.Board;
 
 public class Location {
 	

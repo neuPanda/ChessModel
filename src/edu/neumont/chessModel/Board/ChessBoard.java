@@ -1,13 +1,13 @@
-package edu.neumont.chessModel.board;
+package edu.neumont.chessModel.Board;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Stack;
 
-import edu.neumont.chessModel.game.IGameListener;
-import edu.neumont.chessModel.game.Team;
-import edu.neumont.chessModel.movement.Move;
-import edu.neumont.chessModel.piece.ChessPiece;
+import edu.neumont.chessModel.Game.IGameListener;
+import edu.neumont.chessModel.Game.Team;
+import edu.neumont.chessModel.Movement.Move;
+import edu.neumont.chessModel.Piece.ChessPiece;
 
 public class ChessBoard{
 

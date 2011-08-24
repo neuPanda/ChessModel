@@ -1,11 +1,11 @@
-package edu.neumont.chessModel.piece;
+package edu.neumont.chessModel.Piece;
 
 import java.util.Enumeration;
 
-import edu.neumont.chessModel.board.ChessBoard;
-import edu.neumont.chessModel.board.Location;
-import edu.neumont.chessModel.game.Team;
-import edu.neumont.chessModel.movement.Move;
+import edu.neumont.chessModel.Board.ChessBoard;
+import edu.neumont.chessModel.Board.Location;
+import edu.neumont.chessModel.Game.Team;
+import edu.neumont.chessModel.Movement.Move;
 
 public abstract class ChessPiece {
 

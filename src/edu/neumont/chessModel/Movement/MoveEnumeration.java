@@ -1,12 +1,12 @@
-package edu.neumont.chessModel.movement;
+package edu.neumont.chessModel.Movement;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 
-import edu.neumont.chessModel.board.ChessBoard;
-import edu.neumont.chessModel.board.Location;
-import edu.neumont.chessModel.piece.ChessPiece;
+import edu.neumont.chessModel.Board.ChessBoard;
+import edu.neumont.chessModel.Board.Location;
+import edu.neumont.chessModel.Piece.ChessPiece;
 
 public class MoveEnumeration implements Enumeration<Location> {
 

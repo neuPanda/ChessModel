@@ -1,11 +1,11 @@
-package edu.neumont.chessModel.game;
+package edu.neumont.chessModel.Game;
 
-import edu.neumont.chessModel.board.ChessBoard;
-import edu.neumont.chessModel.board.Location;
-import edu.neumont.chessModel.game.Team.Color;
-import edu.neumont.chessModel.movement.Move;
-import edu.neumont.chessModel.piece.ChessPiece;
-import edu.neumont.chessModel.piece.King;
+import edu.neumont.chessModel.Board.ChessBoard;
+import edu.neumont.chessModel.Board.Location;
+import edu.neumont.chessModel.Game.Team.Color;
+import edu.neumont.chessModel.Movement.Move;
+import edu.neumont.chessModel.Piece.ChessPiece;
+import edu.neumont.chessModel.Piece.King;
 
 public class ChessGame implements ICheckChecker {
 	ChessBoard board;
@@ -84,6 +84,10 @@ public class ChessGame implements ICheckChecker {
 				kingsLocation.getRow(), kingsLocation.getColumn() - 1)));
 		king.setInCheckRight(attackingTeam.canAttack(board, new Location(
 				kingsLocation.getRow(), kingsLocation.getColumn() + 1)));
+	}
+
+	public ChessBoard getBoard() {
+		return board;
 	}
 
 }

@@ -1,4 +1,4 @@
-package edu.neumont.chessModel.game;
+package edu.neumont.chessModel.Game;
 
 
 public interface ICheckChecker {

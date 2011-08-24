@@ -1,19 +1,19 @@
-package edu.neumont.chessModel.game;
+package edu.neumont.chessModel.Game;
 
 import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.Iterator;
 
-import edu.neumont.chessModel.board.ChessBoard;
-import edu.neumont.chessModel.board.Location;
-import edu.neumont.chessModel.movement.Move;
-import edu.neumont.chessModel.piece.Bishop;
-import edu.neumont.chessModel.piece.ChessPiece;
-import edu.neumont.chessModel.piece.King;
-import edu.neumont.chessModel.piece.Knight;
-import edu.neumont.chessModel.piece.Pawn;
-import edu.neumont.chessModel.piece.Queen;
-import edu.neumont.chessModel.piece.Rook;
+import edu.neumont.chessModel.Board.ChessBoard;
+import edu.neumont.chessModel.Board.Location;
+import edu.neumont.chessModel.Movement.Move;
+import edu.neumont.chessModel.Piece.Bishop;
+import edu.neumont.chessModel.Piece.ChessPiece;
+import edu.neumont.chessModel.Piece.King;
+import edu.neumont.chessModel.Piece.Knight;
+import edu.neumont.chessModel.Piece.Pawn;
+import edu.neumont.chessModel.Piece.Queen;
+import edu.neumont.chessModel.Piece.Rook;
 
 public class Team {
 
